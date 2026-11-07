@@ -1,5 +1,5 @@
 {
-  "expense_choices": [
+  "transaction_choices": [
     "Beauty",
     "Bills & Fees",
     "Donation",
@@ -11,14 +11,12 @@
     "Groceries",
     "Healthcare",
     "Home",
+    "Salary",
     "Shopping",
     "Sport & Hobbies",
     "Transport",
     "Travel",
     "Work",
     "Other"
-  ],
-  "income_choices": [
-    "Salary"
   ]
 }

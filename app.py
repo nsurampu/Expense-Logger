@@ -44,10 +44,7 @@ with st.form("expense_form"):
     st.write("Log Transaction - Income/Expense")
     timestamp = st.date_input("Transaction Date", date(datetime.now().year, datetime.now().month, datetime.now().day))
     type = st.radio("Select record type", ("Expense", "Income"))
-    if type=='Expense':
-        category = st.selectbox("Select expense category", config['expense_choices'])
-    else:
-        category = st.selectbox("Select income category", config['income_choices'])
+    category = st.selectbox("Select expense category", config['transaction_choices'])
     amount = st.number_input("Enter transaction amount", value=0)
     note = st.text_input("Any additional details")
     submitted = st.form_submit_button("Submit")
