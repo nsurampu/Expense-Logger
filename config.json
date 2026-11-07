@@ -1,0 +1,24 @@
+{
+  "expense_choices": [
+    "Beauty",
+    "Bills & Fees",
+    "Donation",
+    "Education",
+    "Entertainment",
+    "Family & Personal",
+    "Food & Drink",
+    "Gifts",
+    "Groceries",
+    "Healthcare",
+    "Home",
+    "Shopping",
+    "Sport & Hobbies",
+    "Transport",
+    "Travel",
+    "Work",
+    "Other"
+  ],
+  "income_choices": [
+    "Salary"
+  ]
+}
