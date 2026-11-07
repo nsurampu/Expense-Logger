@@ -14,7 +14,7 @@ class DB:
 
 
     def insert_record(self, timestamp, type, category, amount, note):
-        id = self.get_record_count()['max'].values[0] + 1
+        id = int(self.get_record_count()['max'].values[0] + 1)
         query = sqlalchemy.text("""
             INSERT INTO expenses (id, timestamp, type, category, note, amount)
             VALUES (:id, :timestamp, :type, :category, :note, :amount)
