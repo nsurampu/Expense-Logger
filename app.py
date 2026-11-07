@@ -7,6 +7,22 @@ import streamlit as st
 
 
 
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+if not st.session_state.authenticated:
+    st.subheader("Private Logger Access")
+    entered_password = st.text_input("Enter password", type='password')
+
+    if st.button("Unlock"):
+        if entered_password == st.secrets['app']['password']:
+            st.session_state.authenticated = True
+            st.rerun()
+        else:
+            st.error("Incorrect password")
+    st.stop()
+
+
 @st.cache_resource
 def get_db_obj():
     return DB(st.secrets['supabase']['url'])
