@@ -32,3 +32,11 @@ class DB:
     def fetch_daily_records(self):
         timestamp = datetime.now().strftime("%Y-%m-%d")
         return pd.read_sql(f"SELECT * FROM expenses WHERE timestamp='{timestamp}'", self.engine)
+
+
+    def fetch_transaction_records(self):
+        return pd.read_sql("SELECT * FROM expenses", self.engine)
+
+
+    def fetch_investment_records(self):
+        return pd.read_sql("SELECT * FROM investments", self.engine)
