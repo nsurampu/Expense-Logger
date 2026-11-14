@@ -117,6 +117,9 @@ if tab_selection == "Savings & Expense Summary":
 
         st.plotly_chart(fig_savings_stack, use_container_width=True)
 
+        if st.button("Refresh Data"):
+            transactions, investments = load_data()
+
         st.info("💡 **Tip:** Inspect individual months by checking your transaction database filters below.")
 
         selected_month = st.selectbox("Select Month to Inspect", options=monthly_flow['Timestamp'].unique() if 'Timestamp' in monthly_flow.columns else [])
