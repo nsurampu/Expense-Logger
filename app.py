@@ -35,7 +35,7 @@ def get_db_obj():
 
 db_obj = get_db_obj()
 
-@st.cache_data
+@st.cache_data(ttl=300)
 def load_data():
     try:
         transactions = db_obj.fetch_transaction_records()
@@ -116,9 +116,6 @@ if tab_selection == "Savings & Expense Summary":
         fig_savings_stack.update_layout(barmode='stack', yaxis=dict(range=[0, 100]), template="plotly_dark")
 
         st.plotly_chart(fig_savings_stack, use_container_width=True)
-
-        if st.button("Refresh Data"):
-            transactions, investments = load_data()
 
         st.info("💡 **Tip:** Inspect individual months by checking your transaction database filters below.")
 
